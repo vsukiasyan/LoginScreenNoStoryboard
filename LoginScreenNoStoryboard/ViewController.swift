@@ -9,16 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var loginView: LoginView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        
+        view.backgroundColor = .white
+        setupViews()
+        
+    }
+    
+    func setupViews() {
+        let mainView = LoginView(frame: self.view.frame)
+        self.loginView = mainView
+        self.view.addSubview(loginView)
+        
+        loginView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
 
 }
